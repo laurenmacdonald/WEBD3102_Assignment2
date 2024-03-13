@@ -1,0 +1,53 @@
+body{
+    font-family: "Georgia", serif;
+}
+p{
+    font-size: smaller;
+    font-family: "Helvetica", sans-serif;
+}
+.add-to-cart-link{
+    text-decoration: none;
+    font-size: smaller;
+    font-family: "Helvetica", sans-serif;
+}
+.blockquote{
+    font-style: italic;
+}
+.blockquote-footer{
+    font-style: normal;
+    color:white;
+}
+.home-details{
+    display: inline-block;
+    text-transform: uppercase;
+}
+.home-link{
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color:white;
+}
+
+.section-bg {
+    background-image: url('https://i.ibb.co/93W9SC9/landingimage.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px 0;
+    height: 100vh;
+}
+
+
+@media (max-width: 768px) {
+    /* Adjusts for devices with widths up to 768px */
+    .home-details{
+        font-size: medium;
+        display:block;
+        text-align: center;
+        margin: 5px 0;
+    }
+    .home-link {
+        display: block; /* Each link will take up the full width of its container */
+        margin: 10px 0;
+    }
+}
