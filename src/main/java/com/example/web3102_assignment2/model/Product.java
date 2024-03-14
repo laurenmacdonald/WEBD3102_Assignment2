@@ -14,6 +14,12 @@ public class Product {
     public Product() {
     }
 
+    // Constructor - id and name
+    public Product(int prodId, String prodName){
+        this.prodId = prodId;
+        this.prodName = prodName;
+    }
+
     // Constructor - includes all
     public Product(int prodId, String prodName, String prodDescription, int categoryId, double price, int quantityAvail, int avgRating, String categoryName) {
         this.prodId = prodId;
@@ -34,6 +40,15 @@ public class Product {
         this.price = price;
         this.quantityAvail = quantityAvail;
         this.categoryName = categoryName;
+    }
+
+    public Product(String prodName, String prodDescription, int categoryId, double price, int quantityAvail, int avgRating) {
+        this.prodName = prodName;
+        this.prodDescription = prodDescription;
+        this.categoryId = categoryId;
+        this.price = price;
+        this.quantityAvail = quantityAvail;
+        this.avgRating = avgRating;
     }
 
     public int getProdId() {

@@ -31,6 +31,16 @@
 <jsp:useBean id="drink" scope="request" type="java.util.List"/>
 <jsp:useBean id="dessert" scope="request" type="java.util.List"/>
 <jsp:useBean id="salad" scope="request" type="java.util.List"/>
+<% String addToCartSuccess = request.getParameter("productAdded"); %>
+<% if (addToCartSuccess != null && !addToCartSuccess.isEmpty()) {%>
+<div class="toast container position-fixed bottom-0 end-0 p-3 z-3 mb-5 show">
+    <div class="toast-body d-flex justify-content-between align-items-center">
+        <i class="bi bi-check-circle-fill" aria-hidden="true"></i>&nbsp;
+        <strong class="me-auto">&nbsp;<%=addToCartSuccess%></strong>
+        <button type="button" class="btn-close align-self-end" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+</div>
+<% } %>
 <div class="container bg-body-tertiary justify-content-center p-5 min-vh-100">
     <div class="text-center">
         <h1 class="display-1">Menu</h1>

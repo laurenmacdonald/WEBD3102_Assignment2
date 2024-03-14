@@ -10,5 +10,7 @@ public interface ProductDAO {
     List<Product> selectAllProducts() throws SQLException;
     List<Product> selectAllProductsByCategory(int categoryId) throws SQLException;
     Product select(int productId) throws SQLException;
+    String selectName(int productID) throws SQLException;
+    List<Product> selectProdNameByOrderId(int orderId) throws SQLException;
 
 }

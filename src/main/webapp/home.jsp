@@ -24,7 +24,7 @@
 <section class="section-bg">
     <% String logoutSuccess = request.getParameter("logoutSuccess"); %>
     <% if (logoutSuccess != null && !logoutSuccess.isEmpty()) {%>
-    <div class="toast container position-fixed bottom-0 end-0 p-3 show">
+    <div class="toast container position-fixed bottom-0 end-0 p-3 z-3 mb-5 show">
         <div class="toast-body d-flex justify-content-between align-items-center">
             <i class="bi bi-check-circle-fill" aria-hidden="true"></i>&nbsp;
             <strong class="me-auto">&nbsp;<%=logoutSuccess%></strong>

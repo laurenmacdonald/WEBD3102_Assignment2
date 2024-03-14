@@ -27,7 +27,7 @@
                     <a class="nav-link" href="<%=request.getContextPath()%>/menu">Menu</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Cart</a>
+                    <a class="nav-link" href="<%=request.getContextPath()%>/cart">Cart</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -40,7 +40,7 @@
                                 <li><a class="dropdown-item" href="<%=request.getContextPath()%>/logout">Log Out</a></li>
                             </c:when>
                             <c:otherwise>
-                                <li><a class="dropdown-item" href="#">Create Account</a></li>
+                                <li><a class="dropdown-item" href="<%=request.getContextPath()%>/sign-up">Create Account</a></li>
                                 <li><a class="dropdown-item" href="<%=request.getContextPath()%>/login">Login</a></li>
                             </c:otherwise>
                         </c:choose>

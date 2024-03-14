@@ -28,11 +28,32 @@ public class Order {
         this.orderId = orderId;
         this.customerId = customerId;
     }
+    public Order(int customerId){
+        this.customerId = customerId;
+    }
 
     // Constructor for just the order details table information
-    public Order(int orderId, int orderDetailId, int prodId, int prodQuantity, double totalAmount) {
-        this.orderId = orderId;
+    public Order(int orderDetailId, int orderId,  int prodId, int prodQuantity, double totalAmount) {
         this.orderDetailId = orderDetailId;
+        this.orderId = orderId;
+        this.prodId = prodId;
+        this.prodQuantity = prodQuantity;
+        this.totalAmount = totalAmount;
+    }
+
+    public Order(int orderId, int customerId, int prodId, String prodName, int prodQuantity, double totalAmount) {
+        this.orderId = orderId;
+        this.customerId = customerId;
+        this.prodId = prodId;
+        this.prodName = prodName;
+        this.prodQuantity = prodQuantity;
+        this.totalAmount = totalAmount;
+    }
+
+    // Constructor for just order details without id
+    // Constructor for just the order details table information
+    public Order(int orderId,  int prodId, int prodQuantity, double totalAmount) {
+        this.orderId = orderId;
         this.prodId = prodId;
         this.prodQuantity = prodQuantity;
         this.totalAmount = totalAmount;

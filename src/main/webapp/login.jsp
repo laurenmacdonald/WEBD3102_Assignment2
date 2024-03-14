@@ -24,7 +24,7 @@
 <div class="container col-md-5 min-vh-100">
     <div class="card m-4">
         <div class="card-body">
-            <h1>Menu</h1>
+            <h1>Login</h1>
             <% String errorMessage = request.getParameter("error"); %>
             <% if (errorMessage != null && !errorMessage.isEmpty()) {%>
             <div class="alert alert-danger d-flex align-items-center" role="alert">

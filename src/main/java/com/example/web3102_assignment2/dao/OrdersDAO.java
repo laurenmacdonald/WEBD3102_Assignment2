@@ -9,7 +9,10 @@ import java.util.List;
 public interface OrdersDAO {
     int create(Order order) throws SQLException;
     int createDetails(Order order) throws SQLException;
-    List<Order> selectAllOrders(int customerId) throws SQLException;
+    List<Order> selectAllOrders(int orderId) throws SQLException;
     Order select(int order) throws SQLException;
+    int selectOrderId(int customerId) throws SQLException;
+
     int delete(Order order) throws SQLException;
+    int updateTotalAmount(int orderId) throws SQLException;
 }
