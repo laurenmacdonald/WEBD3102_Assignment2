@@ -7,7 +7,6 @@ import java.util.List;
 
 public interface ProductDAO {
     // Select operations for products
-    List<Product> selectAllProducts() throws SQLException;
     List<Product> selectAllProductsByCategory(int categoryId) throws SQLException;
     Product select(int productId) throws SQLException;
     String selectName(int productID) throws SQLException;

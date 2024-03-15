@@ -145,11 +145,4 @@ public class OrderTable implements OrdersDAO {
         }
         return orderId;
     }
-
-
-
-    @Override
-    public int delete(Order order) throws SQLException {
-        return 0;
-    }
 }

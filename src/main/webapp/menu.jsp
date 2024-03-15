@@ -20,7 +20,6 @@
     <style>
         <%@include file="styles.css" %>
     </style>
-<%--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>--%>
 </head>
 <body class="bg-body-tertiary">
 <jsp:include page="/components/navbar.jsp"/>
@@ -101,7 +100,6 @@
                                     <c:otherwise><a class="add-to-cart-link btn btn-outline-secondary btn-sm"
                                                     href="<%=request.getContextPath()%>/login" role="button">Login to Add to Cart</a></c:otherwise>
                                 </c:choose>
-
                             </div>
                         </div>
                     </div>

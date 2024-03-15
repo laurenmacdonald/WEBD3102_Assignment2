@@ -15,17 +15,4 @@ public class ProductIdCounter {
         }
         return countMap;
     }
-    public static int countOccurrences(int numToCount, List<Integer> integers) {
-        int count = 0;
-
-        // Iterate through the list of integers
-        for (int num : integers) {
-            // If the current integer matches the one to be counted, increment count
-            if (num == numToCount) {
-                count++;
-            }
-        }
-
-        return count;
-    }
 }

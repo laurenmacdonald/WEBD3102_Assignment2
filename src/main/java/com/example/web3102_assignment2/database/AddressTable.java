@@ -40,11 +40,6 @@ public class AddressTable implements AddressDAO {
     }
 
     @Override
-    public Address select(String addressLine1, String addressLine2, String city, String province, String country, String postalCode) throws SQLException {
-        return null;
-    }
-
-    @Override
     public int selectAddressId() throws SQLException {
         Connection conn = null;
         PreparedStatement preparedStatement = null;
@@ -95,8 +90,4 @@ public class AddressTable implements AddressDAO {
         return rs;
     }
 
-    @Override
-    public int delete(Address address) throws SQLException {
-        return 0;
-    }
 }

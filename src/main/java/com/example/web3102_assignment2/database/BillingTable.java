@@ -36,18 +36,4 @@ public class BillingTable implements BillingDAO {
         return rs;
     }
 
-    @Override
-    public Billing select() throws SQLException {
-        return null;
-    }
-
-    @Override
-    public int update(Billing billing) throws SQLException {
-        return 0;
-    }
-
-    @Override
-    public int delete(Billing billing) throws SQLException {
-        return 0;
-    }
 }

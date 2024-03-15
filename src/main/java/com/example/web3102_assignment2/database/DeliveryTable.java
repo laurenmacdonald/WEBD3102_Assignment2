@@ -72,14 +72,4 @@ public class DeliveryTable implements DeliveryDAO {
         }
         return delivery;
     }
-
-    @Override
-    public int update(int deliveryID, String deliveryStatus) throws SQLException {
-        return 0;
-    }
-
-    @Override
-    public int delete(int deliveryId) throws SQLException {
-        return 0;
-    }
 }

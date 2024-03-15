@@ -9,23 +9,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f7d2b8b-6fa5-4953-b636-9c0c8cc32724" name="Changes" comment="All functionality added - need to clean up next and add error handling">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/LoginServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/SignUpServlet.java" afterDir="false" />
+    <list default="true" id="7f7d2b8b-6fa5-4953-b636-9c0c8cc32724" name="Changes" comment="Cleaned up, some error handling added.">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/c1d200b1-f9fe-41d5-82aa-772ba97361b2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c1d200b1-f9fe-41d5-82aa-772ba97361b2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/c1d200b1-f9fe-41d5-82aa-772ba97361b2/storage_v2/_src_/schema/order_management_system.-i645Q.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c1d200b1-f9fe-41d5-82aa-772ba97361b2/storage_v2/_src_/schema/order_management_system.-i645Q.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/Servlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/Servlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/deliveryStatusTag.tag" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/deliveryStatusTag.tag" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/address.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/address.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/billing.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/billing.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/LoginServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/SignUpServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/dao/AddressDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/dao/AddressDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/dao/BillingDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/dao/BillingDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/dao/CustomersDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/dao/CustomersDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/dao/DeliveryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/dao/DeliveryDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/dao/OrdersDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/dao/OrdersDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/dao/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/database/AddressTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/database/AddressTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/database/BillingTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/database/BillingTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/database/CustomerTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/database/CustomerTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/database/DeliveryTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/database/DeliveryTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/database/OrderTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/database/OrderTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/database/ProductTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/database/ProductTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/util/ProductIdCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/util/ProductIdCounter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/components/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/components/navbar.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/customer.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/deliveries.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/deliveries.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/leaveReview.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/leaveReview.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/menu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/menu.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/sign-up.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/sign-up.jsp" afterDir="false" />
     </list>
@@ -201,7 +205,7 @@
       <workItem from="1710255641670" duration="19921000" />
       <workItem from="1710335258135" duration="5497000" />
       <workItem from="1710340791019" duration="16872000" />
-      <workItem from="1710423216297" duration="32136000" />
+      <workItem from="1710423216297" duration="34638000" />
     </task>
     <task id="LOCAL-00001" summary="All functionality added - need to clean up next and add error handling">
       <option name="closed" value="true" />
@@ -211,7 +215,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710450275808</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Cleaned up, some error handling added.">
+      <option name="closed" value="true" />
+      <created>1710523843981</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1710523843981</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,7 +231,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="All functionality added - need to clean up next and add error handling" />
-    <option name="LAST_COMMIT_MESSAGE" value="All functionality added - need to clean up next and add error handling" />
+    <MESSAGE value="Cleaned up, some error handling added." />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up, some error handling added." />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

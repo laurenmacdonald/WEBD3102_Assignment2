@@ -37,7 +37,7 @@
                     <ul class="dropdown-menu">
                         <c:choose>
                             <c:when test="${sessionScope.customerSessionId != null}">
-                                <li><a class="dropdown-item" href="<%=request.getContextPath()%>LoginServlet/logout">Log Out</a></li>
+                                <li><a class="dropdown-item" href="<%=request.getContextPath()%>/logout">Log Out</a></li>
                             </c:when>
                             <c:otherwise>
                                 <li><a class="dropdown-item" href="<%=request.getContextPath()%>/sign-up">Create Account</a></li>

@@ -8,7 +8,4 @@ public interface DeliveryDAO {
 
     int create(Delivery delivery) throws SQLException;
     Delivery select(int orderId) throws SQLException;
-    int update(int deliveryID, String deliveryStatus) throws SQLException;
-    int delete(int deliveryId) throws SQLException;
-
 }

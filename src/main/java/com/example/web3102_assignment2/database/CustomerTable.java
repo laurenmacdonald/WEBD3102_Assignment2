@@ -9,7 +9,6 @@ import static com.example.web3102_assignment2.database.MySQLConnection.getConnec
 
 public class CustomerTable implements CustomersDAO {
     private static final String SQL_SELECT_JOIN_ADDRESS = "SELECT c.customerId, c.firstName, c.lastName, c.email, c.phoneNumber, a.addressLine1, a.addressLine2, a.city, a.province, a.country, a.postalCode FROM customers AS c JOIN address AS a ON c.addressId = a.addressId WHERE email = ? && password = ?;";
-    private static final String SQL_SELECT_CUSTOMER = "SELECT * FROM customers WHERE email = ? && password = ?;";
     private static final String SQL_INSERT = "INSERT INTO customers (email, password, firstName, lastName, phoneNumber) VALUES (?,?, ?, ?, ?);";
     private static final String SQL_UPDATE = "UPDATE customers SET addressId = ? WHERE email = ?";
     @Override
@@ -78,10 +77,6 @@ public class CustomerTable implements CustomersDAO {
     }
 
     @Override
-    public int update(Customer customer) throws SQLException {
-        return 0;
-    }
-    @Override
     public int updateAddressId(String email, int addressId) throws SQLException {
         Connection conn = null;
         PreparedStatement preparedStatement = null;
@@ -105,9 +100,5 @@ public class CustomerTable implements CustomersDAO {
         return rs;
     }
 
-    @Override
-    public int delete(Customer customer) throws SQLException {
-        return 0;
-    }
 
 }

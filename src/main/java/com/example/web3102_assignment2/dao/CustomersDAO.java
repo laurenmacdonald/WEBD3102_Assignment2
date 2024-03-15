@@ -8,7 +8,5 @@ public interface CustomersDAO {
     // CRUD operations for Customers
     int create(Customer customer) throws SQLException;
     Customer select(String email, String password) throws SQLException;
-    int update(Customer customer) throws SQLException;
-    int delete(Customer customer) throws SQLException;
     int updateAddressId(String email, int addressId) throws SQLException;
 }

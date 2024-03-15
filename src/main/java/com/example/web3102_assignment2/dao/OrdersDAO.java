@@ -12,7 +12,5 @@ public interface OrdersDAO {
     List<Order> selectAllOrders(int orderId) throws SQLException;
     Order select(int order) throws SQLException;
     int selectOrderId(int customerId) throws SQLException;
-
-    int delete(Order order) throws SQLException;
     int updateTotalAmount(int orderId) throws SQLException;
 }

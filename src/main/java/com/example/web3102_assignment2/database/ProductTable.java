@@ -17,38 +17,10 @@ import static com.example.web3102_assignment2.database.MySQLConnection.getConnec
 
 public class ProductTable implements ProductDAO {
     private static final String SQL_SELECT_ONE = "SELECT * FROM products WHERE prodId = ?";
-    private static final String SQL_SELECT = "SELECT p.prodId, p.prodName, p.prodDescription, p.categoryId, c.categoryName, p.price, p.quantityAvail, p.avgRating FROM products p JOIN category c ON p.categoryId = c.categoryId;";
-    private static final String SQL_SELECT_CAT = "SELECT p.prodId, p.prodName, p.prodDescription, p.categoryId, c.categoryName, p.price, p.quantityAvail, p.avgRating FROM products p JOIN category c ON p.categoryId = c.categoryId WHERE p.categoryId = ?;";
+    private static final String SQL_SELECT_CAT = "SELECT p.prodId, p.prodName, p.prodDescription, p.categoryId, c.categoryName, p.price, p.quantityAvail, p.avgRating " +
+            "FROM products p JOIN category c ON p.categoryId = c.categoryId WHERE p.categoryId = ?;";
     private static final String SQL_SELECT_NAME = "SELECT prodName FROM products WHERE prodId = ?;";
     private static final String SQL_SELECT_PROD_NAME = "SELECT p.prodId, p.prodName FROM orderDetails od JOIN products p ON od.prodId = p.prodId WHERE od.orderId=?;";
-
-    @Override
-    public List<Product> selectAllProducts() throws SQLException {
-        Connection conn = null;
-        PreparedStatement preparedStatement = null;
-        ResultSet rs = null;
-        List<Product> listAllProducts = new ArrayList<>();
-        try{
-            conn = getConnection();
-            preparedStatement = conn.prepareStatement(SQL_SELECT);
-            rs = preparedStatement.executeQuery();
-            while(rs.next()){
-                listAllProducts.add(new Product(rs.getString("prodName"),
-                        rs.getString("prodDescription"),
-                        rs.getInt("price"),
-                        rs.getInt("quantityAvail"),
-                        rs.getInt("avgRating"),
-                        rs.getString("categoryName")));
-            }
-        } catch (Exception ex){
-            System.out.println("Error:" + ex.getMessage());
-        } finally {
-            if(rs != null) {rs.close();}
-            if(preparedStatement != null) {preparedStatement.close();}
-            if(conn != null) {conn.close();}
-        }
-        return listAllProducts;
-    }
 
     @Override
     public Product select(int productId) throws SQLException  {
