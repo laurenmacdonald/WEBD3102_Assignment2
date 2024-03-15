@@ -14,5 +14,9 @@
     <c:when test="${value eq 'delivered'}">
         <p><i class="bi bi-check-circle" aria-hidden="true"></i>&nbsp;
         Delivered</p>
+        <a class="add-to-cart-link btn btn-outline-secondary btn-sm"
+           href="<%=request.getContextPath()%>/leaveReview?orderNumber=<c:out value='${sessionScope.delivery.orderId}' />"
+           role="button"><i
+                class="bi bi-pencil-square" aria-hidden="true"></i>&nbsp;&nbsp;Leave A Review</a>
     </c:when>
 </c:choose>

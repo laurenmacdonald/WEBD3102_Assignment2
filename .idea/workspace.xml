@@ -9,36 +9,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f7d2b8b-6fa5-4953-b636-9c0c8cc32724" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/dao/DeliveryDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/dao/ReviewDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/database/DeliveryTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/database/ReviewTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/model/Delivery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/model/Review.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/util/ProductIdCounter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/deliveryStatusTag.tag" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/cart.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/deliveries.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/leaveReview.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="7f7d2b8b-6fa5-4953-b636-9c0c8cc32724" name="Changes" comment="All functionality added - need to clean up next and add error handling">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/LoginServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/SignUpServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/c1d200b1-f9fe-41d5-82aa-772ba97361b2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c1d200b1-f9fe-41d5-82aa-772ba97361b2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/c1d200b1-f9fe-41d5-82aa-772ba97361b2/storage_v2/_src_/schema/order_management_system.-i645Q.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c1d200b1-f9fe-41d5-82aa-772ba97361b2/storage_v2/_src_/schema/order_management_system.-i645Q.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/Servlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/Servlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/dao/OrdersDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/dao/OrdersDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/dao/ProductDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/database/OrderTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/database/OrderTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/database/ProductTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/database/ProductTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/web3102_assignment2/util/RatingTagSupport.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/deliveryStatusTag.tag" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/tags/deliveryStatusTag.tag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/address.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/address.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/billing.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/billing.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cart.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/components/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/components/navbar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/customer.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/deliveries.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/deliveries.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/leaveReview.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/leaveReview.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/menu.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/menu.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/sign-up.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/sign-up.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,12 +201,25 @@
       <workItem from="1710255641670" duration="19921000" />
       <workItem from="1710335258135" duration="5497000" />
       <workItem from="1710340791019" duration="16872000" />
-      <workItem from="1710423216297" duration="19150000" />
+      <workItem from="1710423216297" duration="32136000" />
     </task>
+    <task id="LOCAL-00001" summary="All functionality added - need to clean up next and add error handling">
+      <option name="closed" value="true" />
+      <created>1710450275807</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1710450275808</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="All functionality added - need to clean up next and add error handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="All functionality added - need to clean up next and add error handling" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

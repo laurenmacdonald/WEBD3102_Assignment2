@@ -21,6 +21,7 @@
     <style>
         <%@include file="styles.css" %>
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body class="bg-body-tertiary">
 <jsp:include page="/components/navbar.jsp"/>
@@ -44,15 +45,14 @@
                 <td><p><c:out value="${sessionScope.delivery.firstName}"/></p></td>
                 <td><p><c:out value="${sessionScope.delivery.phoneNumber}"/></p></td>
                 <td><deliveryStatus:deliveryStatusTag value="${sessionScope.delivery.deliveryStatus}"/>
-                    <a class="add-to-cart-link btn btn-outline-secondary btn-sm"
-                       href="<%=request.getContextPath()%>/leaveReview?orderNumber=<c:out value='${sessionScope.delivery.orderId}' />"
-                       role="button"><i
-                            class="bi bi-pencil-square" aria-hidden="true"></i>&nbsp;&nbsp;Leave A Review</a></td>
+                    </td>
             </tr>
             </tbody>
         </table>
     </div>
-
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 </html>

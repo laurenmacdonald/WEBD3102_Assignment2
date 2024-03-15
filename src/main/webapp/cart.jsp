@@ -20,6 +20,7 @@
     <style>
         <%@include file="styles.css" %>
     </style>
+<%--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>--%>
 </head>
 <body class="bg-body-tertiary">
 <jsp:include page="/components/navbar.jsp"/>
@@ -27,42 +28,53 @@
     <div class="text-center">
         <h1>Cart</h1>
     </div>
-    <div class="container text-left">
-        <table class="table table-bordered">
-            <thead>
-            <tr>
-                <th scope="col">Product Name</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Price</th>
-            </tr>
-            </thead>
-            <tbody>
+    <c:choose>
+        <c:when test="${empty sessionScope.fullOrderList}">
+            <div class="container text-center">
+                <p class="display-6">There is nothing in your cart.</p>
+            </div>
+        </c:when>
+        <c:otherwise>
+            <div class="container text-left">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                    </thead>
+                    <tbody>
 
-            <c:forEach var="orderItem" items="${sessionScope.fullOrderList}">
-                <tr>
-                    <td><c:out value="${orderItem.prodName}" /></td>
-                    <td><c:out value="${orderItem.prodQuantity}" /></td>
-                    <td><c:out value="${orderItem.totalAmount}" /></td>
-                </tr>
-            </c:forEach>
-            <c:set var="totalAmount" value="0" />
-            <c:forEach var="orderItem" items="${sessionScope.fullOrderList}">
-                <c:set var="totalAmount" value="${totalAmount + orderItem.totalAmount}" />
-            </c:forEach>
-            <tr>
-                <td class="table-light" colspan="2">Total:</td>
-                <td class="table-light">$<c:out value="${totalAmount}" /></td>
+                    <c:forEach var="orderItem" items="${sessionScope.fullOrderList}">
+                        <tr>
+                            <td><c:out value="${orderItem.prodName}" /></td>
+                            <td><c:out value="${orderItem.prodQuantity}" /></td>
+                            <td><c:out value="${orderItem.totalAmount}" /></td>
+                        </tr>
+                    </c:forEach>
+                    <c:set var="totalAmount" value="0" />
+                    <c:forEach var="orderItem" items="${sessionScope.fullOrderList}">
+                        <c:set var="totalAmount" value="${totalAmount + orderItem.totalAmount}" />
+                    </c:forEach>
+                    <tr>
+                        <td class="table-light" colspan="2">Total:</td>
+                        <td class="table-light">$<c:out value="${totalAmount}" /></td>
 
-            </tr>
-            <tr>
-                <td colspan="3">               <a class="add-to-cart-link btn btn-outline-secondary btn-sm"
-                                      href="<%=request.getContextPath()%>/startDelivery" role="button"><i
-                        class="bi bi-cart-check-fill" aria-hidden="true"></i>&nbsp;&nbsp;Place delivery</a></td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-
+                    </tr>
+                    <tr>
+                        <td colspan="3"><a class="add-to-cart-link btn btn-outline-secondary btn-sm"
+                                                          href="<%=request.getContextPath()%>/startDelivery" role="button"><i
+                                class="bi bi-cart-check-fill" aria-hidden="true"></i>&nbsp;&nbsp;Place delivery</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </c:otherwise>
+    </c:choose>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
 </html>

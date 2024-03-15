@@ -18,9 +18,20 @@
     <style>
         <%@include file="styles.css" %>
     </style>
+<%--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>--%>
 </head>
 <body class="bg-body-tertiary">
 <jsp:include page="/components/navbar.jsp"/>
+<% String signupSuccess = request.getParameter("signupSuccess"); %>
+<% if (signupSuccess != null && !signupSuccess.isEmpty()) {%>
+<div class="toast container position-fixed bottom-0 end-0 p-3 z-3 mb-5 show">
+    <div class="toast-body d-flex justify-content-between align-items-center">
+        <i class="bi bi-check-circle-fill" aria-hidden="true"></i>&nbsp;
+        <strong class="me-auto">&nbsp;<%=signupSuccess%></strong>
+        <button type="button" class="btn-close align-self-end" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+</div>
+<% } %>
 <div class="container col-md-5 min-vh-100">
     <div class="card m-4">
         <div class="card-body">
@@ -35,14 +46,14 @@
             <form action="login/auth" method="post">
                 <div class="mb-3">
                     <label for="email" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="email" name="email" value="<c:out value='${email}'/>">
+                    <input type="email" class="form-control" id="email" name="email" value="<c:out value='${email}'/>" required>
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
                     <input type="password" class="form-control" id="password" name="password"
-                           value="<c:out value='${password}'/>">
+                           value="<c:out value='${password}'/>" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-secondary">Submit</button>
             </form>
         </div>
     </div>

@@ -14,7 +14,7 @@ import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
 import java.util.*;
 
-@WebServlet(urlPatterns = "/", loadOnStartup = 1)
+@WebServlet(urlPatterns = "/", loadOnStartup = 1, name="Servlet")
 public class Servlet extends HttpServlet {
     private CustomerTable customerTable;
     private ProductTable productTable;
@@ -73,7 +73,12 @@ public class Servlet extends HttpServlet {
                     addToCart(request, response);
                     break;
                 case "/cart":
-                    displayCart(request, response);
+                    HttpSession session = request.getSession();
+                    if(session.getAttribute("productIdList") != null){
+                        displayCart(request, response);
+                    } else {
+                        response.sendRedirect(request.getContextPath() + "/cart.jsp");
+                    }
                     break;
                 case "/startDelivery":
                     createDelivery(request, response);
@@ -171,17 +176,19 @@ public class Servlet extends HttpServlet {
         String phoneNumber = request.getParameter("phoneNumber");
         Customer newCustomer = new Customer(email, password, firstName, lastName, phoneNumber);
         Address nullAddress = new Address();
-        customerTable.create(newCustomer);
-        addressTable.create(nullAddress);
-        int addressId = addressTable.selectAddressId();
-        // Put the customer email in session id to be used with address and billing.
-        String customerEmail = newCustomer.getEmail();
-        HttpSession session = request.getSession();
-        session.setAttribute("customerEmail", customerEmail);
-        session.setAttribute("addressId", addressId);
 
-        response.sendRedirect(request.getContextPath() + "/address");
+        if(customerTable.create(newCustomer) == 1 && addressTable.create(nullAddress) == 1){
+            int addressId = addressTable.selectAddressId();
+            // Put the customer email in session id to be used with address and billing.
+            String customerEmail = newCustomer.getEmail();
+            boolean accountCreated = true;
+            HttpSession session = request.getSession();
+            session.setAttribute("customerEmail", customerEmail);
+            session.setAttribute("addressId", addressId);
+            session.setAttribute("accountCreated", accountCreated);
 
+            response.sendRedirect(request.getContextPath() + "/address");
+        }
     }
 
     public void addAddress(HttpServletRequest request, HttpServletResponse response) throws IOException, SQLException {
@@ -200,6 +207,8 @@ public class Servlet extends HttpServlet {
         String customerEmail = (String) session.getAttribute("customerEmail");
         int addressId = (Integer) session.getAttribute("addressId");
         customerTable.updateAddressId(customerEmail, addressId);
+        boolean addressAdded = true;
+        session.setAttribute("addressAdded", addressAdded);
         response.sendRedirect(request.getContextPath() + "/billing");
     }
 
@@ -216,7 +225,11 @@ public class Servlet extends HttpServlet {
         if (billingTable.create(newBilling) == 1) {
             session.removeAttribute("addressId");
             session.removeAttribute("customerEmail");
-            response.sendRedirect(request.getContextPath() + "/login");
+            session.removeAttribute("addressAdded");
+            session.removeAttribute("accountCreated");
+            String successMessage = "Sign up successful! Login to continue.";
+            response.sendRedirect(request.getContextPath() + "/login?signupSuccess=" + URLEncoder.encode(successMessage, StandardCharsets.UTF_8));
+            //response.sendRedirect(request.getContextPath() + "/login");
         }
     }
 
@@ -286,25 +299,10 @@ public class Servlet extends HttpServlet {
         }
     }
 
-    public void getListOfProducts(HttpServletRequest request) throws SQLException {
-        HttpSession session = request.getSession();
-        List<Integer> productIdList = (List<Integer>) session.getAttribute("productIdList");
-        if (productIdList != null) {
-            List<Product> productList = new ArrayList<>();
-
-            for (Integer productId : productIdList) {
-                Product newProduct = productTable.select(productId);
-                productList.add(newProduct);
-            }
-            session.setAttribute("productList", productList);
-        }
-
-    }
-
     public void updateCart(HttpServletRequest request) throws SQLException {
         HttpSession session = request.getSession();
         getQuantity(request);
-        getListOfProducts(request);
+        //getListOfProducts(request);
 
         int customerId = (int) session.getAttribute("customerId");
         Map<Integer, Integer> countOfProductIds = (Map<Integer, Integer>) session.getAttribute("countOfProductIds");
@@ -369,16 +367,23 @@ public class Servlet extends HttpServlet {
 
         String[] ratings = request.getParameterValues("rating[]");
         String[] reviewTexts = request.getParameterValues("reviewText[]");
-        Integer orderId = (Integer) session.getAttribute("orderId");
         Integer customerId = (Integer) session.getAttribute("customerId");
 
         for (int i = 0; i < orderedProducts.size(); i++) {
             int rating = Integer.parseInt(ratings[i]);
             String reviewText = reviewTexts[i];
+            int prodId = orderedProducts.get(i).getProdId();
 
-            Review review = new Review(orderId, customerId, rating, reviewText);
+            Review review = new Review(prodId, customerId, rating, reviewText);
             reviewTable.create(review);
         }
+        session.removeAttribute("delivery");
+        session.removeAttribute("productIdList");
+        session.removeAttribute("orderId");
+        session.removeAttribute("countOfProductIds");
+        session.removeAttribute("fullOrderList");
+        session.removeAttribute("orderedProducts");
+
         response.sendRedirect(request.getContextPath() + "/home");
     }
 }

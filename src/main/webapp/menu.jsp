@@ -20,6 +20,7 @@
     <style>
         <%@include file="styles.css" %>
     </style>
+<%--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>--%>
 </head>
 <body class="bg-body-tertiary">
 <jsp:include page="/components/navbar.jsp"/>
@@ -36,7 +37,8 @@
 <div class="toast container position-fixed bottom-0 end-0 p-3 z-3 mb-5 show">
     <div class="toast-body d-flex justify-content-between align-items-center">
         <i class="bi bi-check-circle-fill" aria-hidden="true"></i>&nbsp;
-        <strong class="me-auto">&nbsp;<%=addToCartSuccess%></strong>
+        <strong class="me-auto">&nbsp;<%=addToCartSuccess%>
+        </strong>
         <button type="button" class="btn-close align-self-end" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
 </div>
@@ -91,9 +93,15 @@
                                 <p>Rating: <rating:ratingIconTag value="${item.avgRating}"/></p>
                             </div>
                             <div class="row px-5">
-                                <a class="add-to-cart-link btn btn-outline-secondary btn-sm"
-                                   href="add?productId=<c:out value='${item.prodId}' />" role="button"><i
-                                        class="bi bi-plus-circle" aria-hidden="true"></i>&nbsp;&nbsp;Add To Cart</a>
+                                <c:choose>
+                                    <c:when test="${sessionScope.containsValue(customerSessionId)}">
+                                        <a class="add-to-cart-link btn btn-outline-secondary btn-sm"
+                                           href="add?productId=<c:out value='${item.prodId}' />" role="button"><i
+                                                class="bi bi-plus-circle" aria-hidden="true"></i>&nbsp;&nbsp;Add To Cart</a></c:when>
+                                    <c:otherwise><a class="add-to-cart-link btn btn-outline-secondary btn-sm"
+                                                    href="<%=request.getContextPath()%>/login" role="button">Login to Add to Cart</a></c:otherwise>
+                                </c:choose>
+
                             </div>
                         </div>
                     </div>

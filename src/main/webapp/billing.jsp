@@ -18,6 +18,7 @@
     <style>
         <%@include file="styles.css" %>
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body class="bg-body-tertiary">
 <jsp:include page="/components/navbar.jsp"/>
@@ -25,22 +26,33 @@
     <div class="card m-4">
         <div class="card-body">
             <h1>Add Your Billing Information</h1>
-            <form action="sign-up/add-billing" method="post">
-                <div class="mb-3">
-                    <label for="cardNumber" class="form-label">Card Number</label>
-                    <input type="text" class="form-control" id="cardNumber" name="cardNumber" value="<c:out value='${cardNumber}'/>">
-                </div>
-                <div class="mb-3">
-                    <label for="expiryDate" class="form-label">Expiry Date</label>
-                    <input type="text" class="form-control" id="expiryDate" name="expiryDate" value="<c:out value='${expiryDate}'/>">
-                </div>
-                <div class="mb-3">
-                    <label for="securityCode" class="form-label">Security Code</label>
-                    <input type="text" class="form-control" id="securityCode" name="securityCode"
-                           value="<c:out value='${securityCode}'/>">
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+            <c:choose>
+                <c:when test="${sessionScope.addressAdded != null && sessionScope.addressAdded}">
+                    <form action="sign-up/add-billing" method="post">
+                        <div class="mb-3">
+                            <label for="cardNumber" class="form-label">Card Number</label>
+                            <input type="text" class="form-control" id="cardNumber" name="cardNumber"
+                                   value="<c:out value='${cardNumber}'/>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="expiryDate" class="form-label">Expiry Date</label>
+                            <input type="text" class="form-control" id="expiryDate" name="expiryDate"
+                                   value="<c:out value='${expiryDate}'/>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="securityCode" class="form-label">Security Code</label>
+                            <input type="text" class="form-control" id="securityCode" name="securityCode"
+                                   value="<c:out value='${securityCode}'/>" required>
+                        </div>
+                        <button type="submit" class="btn btn-secondary">Submit</button>
+                    </form>
+                </c:when>
+                <c:otherwise>
+                    <div class="container text-center">
+                        <p class="lead">Error. <br> Please go back to the first step - add your address or create account.</p>
+                    </div>
+                </c:otherwise>
+            </c:choose>
         </div>
     </div>
 </div>

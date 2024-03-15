@@ -11,6 +11,7 @@
     <style>
         <%@include file="styles.css" %>
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body class="bg-body-tertiary">
 <jsp:include page="/components/navbar.jsp"/>
@@ -28,7 +29,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="rating${status.index}" class="form-label">Rating</label>
-                        <select class="form-select" aria-label="Rating" id="rating${status.index}" name="rating[]">
+                        <select class="form-select" aria-label="Rating" id="rating${status.index}" name="rating[]" required>
                             <option value="">Choose from the following options</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
@@ -39,10 +40,10 @@
                     </div>
                     <div class="mb-3">
                         <label for="reviewText${status.index}" class="form-label">Review Text</label>
-                        <textarea class="form-control" rows="2" id="reviewText${status.index}" name="reviewText[]"></textarea>
+                        <textarea class="form-control" rows="2" id="reviewText${status.index}" name="reviewText[]" required></textarea>
                     </div>
                 </c:forEach>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-secondary">Submit</button>
             </form>
 
         </div>

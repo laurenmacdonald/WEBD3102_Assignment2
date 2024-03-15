@@ -18,6 +18,7 @@
     <style>
         <%@include file="styles.css" %>
     </style>
+<%--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>--%>
 </head>
 <body class="bg-body-tertiary">
 <jsp:include page="/components/navbar.jsp"/>
@@ -28,29 +29,29 @@
             <form action="sign-up/create-account" method="post">
                 <div class="mb-3">
                     <label for="email" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="email" name="email" value="<c:out value='${email}'/>">
+                    <input type="email" class="form-control" id="email" name="email" value="<c:out value='${email}'/>"  required>
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
                     <input type="password" class="form-control" id="password" name="password"
-                           value="<c:out value='${password}'/>">
+                           value="<c:out value='${password}'/>" required>
                 </div>
                 <div class="mb-3">
                     <label for="firstName" class="form-label">First Name</label>
                     <input type="text" class="form-control" id="firstName" name="firstName"
-                           value="<c:out value='${firstName}'/>">
+                           value="<c:out value='${firstName}'/>" required>
                 </div>
                 <div class="mb-3">
                     <label for="lastName" class="form-label">Last Name</label>
                     <input type="text" class="form-control" id="lastName" name="lastName"
-                           value="<c:out value='${lastName}'/>">
+                           value="<c:out value='${lastName}'/>" required>
                 </div>
                 <div class="mb-3">
                     <label for="phoneNumber" class="form-label">Phone Number</label>
                     <input type="text" class="form-control" id="phoneNumber" name="phoneNumber"
-                           value="<c:out value='${phoneNumber}'/>">
+                           value="<c:out value='${phoneNumber}'/>" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-secondary">Submit</button>
             </form>
         </div>
     </div>
